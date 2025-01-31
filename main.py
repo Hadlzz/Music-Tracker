@@ -15,12 +15,12 @@ class main_menu(QtWidgets.QMainWindow):
 
         super(main_menu,self).__init__() # call constrcutor of parent class
         
-        uic.loadUi("mainwindow.ui",self)
+        uic.loadUi("mainwindow.ui", self)
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
-        self.list_musicLib = self.findChild(QListWidget,"list_musicLib")
-        self.list_recentlyLib = self.findChild(QListWidget,"list_recentlyPlayed")
-        self.label_musicLib = self.findChild(QLabel,"label_musicLib")
+        self.list_musicLib = self.findChild(QListWidget, "list_musicLib")
+        self.list_recentlyLib = self.findChild(QListWidget, "list_recentlyPlayed")
+        self.label_musicLib = self.findChild(QLabel, "label_musicLib")
         self.label_recentlyLib = self.findChild(QLabel, "label_recentlyPlayed")
         self.searchBar = self.findChild(QLineEdit, "searchBar")
         self.populate_musicLib()
@@ -59,6 +59,10 @@ class main_menu(QtWidgets.QMainWindow):
         self.list_musicLib.doubleClicked.connect(self.list_musicLib_clicked)
 
     def list_musicLib_clicked(self):
+        current_item = self.list_musicLib.currentitem()
+        if current_item:
+             selected_song = current_item.text()
+             
          
          
 
