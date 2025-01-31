@@ -5,9 +5,19 @@ from PyQt5.QtWidgets import QApplication, QMainWindow, QPushButton, QListWidget,
 from mainwindow import Ui_MainWindow
 
 from PyQt5 import uic
-from datetime import datetime
 
-TIME_LIMIT = 100
+
+
+
+class performanceScreen(QMainWindow):
+    def __init__(self):
+        
+        super(performanceScreen,self).__init__()
+        uic.loadUi("performanceScreen" , self)
+        self.setWindowTitle("Song Details")
+
+
+        
 
 class main_menu(QtWidgets.QMainWindow):
 
@@ -59,10 +69,11 @@ class main_menu(QtWidgets.QMainWindow):
         self.list_musicLib.doubleClicked.connect(self.list_musicLib_clicked)
 
     def list_musicLib_clicked(self):
-        current_item = self.list_musicLib.currentitem()
+        current_item = self.list_musicLib.currentItem()
         if current_item:
              selected_song = current_item.text()
-             
+
+
          
          
 
